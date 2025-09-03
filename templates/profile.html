@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<!-- <h2 style="color: #c25100; text-align:center">{{ user.username }}'s Profile</h2> -->
+
+
+<!-- <p>Profile-Picture:</p> -->
+ <div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg p-4" style="border-radius: 15px;">
+         <div class="text-center mb-4">
+{% if user.profile_picture %}
+   <img src="{{ user.profile_picture.url }}" alt="Profile_picture" id="profilePic"
+    class= "rounded-circle shadow" style=" width:150px; height:150px;" >
+     <h4 class="mt-3" style="color:#C25100;">{{ user.username|title }}'s Profile</h4>
+         </div>
+   <div  id="imgModal" class="modal">
+   <span class="close">&times;</span>
+   <img class="modal-content" id="imgZoom">
+</div>
+
+{% else %}
+   <!-- <p> No Profile picture uploaded.</p> -->
+     <img src="{% static 'images/default_image.png' %}" alt="Default profile"
+         style="width:150px; height:150px; border-radius:50%; object-fit:cover;">
+{% endif %}
+
+
+
+<br><br>
+<ul class="list-group list-group-flush">
+<li>Username: {{ user_profile.username }}</li>
+<li>Email: {{ user_profile.email }}</li>
+<li>First Name: {{user_profile.first_name}}</li>
+<li>Last Name: {{user_profile.last_name}}</li>
+<li>Date-Of-Birth: {{user_profile.birth_date}}</li>
+<li>Location: {{user_profile.location}}</li>
+</ul>
+<br>
+<div class="text-center mt-4">
+<a href="{%url 'api:profile_edit'%}" class="btn text-white" style="background-color:#C25100;">Edit Profile</a>
+</div>
+      </div></div></div></div>
+<style>
+
+.modal {
+  display: none; 
+  position: fixed; 
+
+  left: 50px;
+  right: 50px;
+  top: 50px;
+  width:fit-content ;
+  height: fit-content;
+  max-width: 90vw; 
+  max-height: 90vh;  
+  border-radius: 10px;
+  transform:none;
+
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 50%;
+  max-height: 70%;
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 50px;
+  right: 45px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close:hover {
+  color: #bbb;
+}
+
+</style>
+
+<script>
+  // Get modal
+  var modal = document.getElementById("imgModal");
+
+  // Get image and insert into modal
+  var img = document.getElementById("profilePic");
+  var modalImg = document.getElementById("imgZoom");
+  var span = document.getElementsByClassName("close")[0];
+
+  img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+
+  // Close modal on click X
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // Close modal on click outside image
+  modal.onclick = function(e) {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<ul>
+<li><legend><p> {{question.question_text }}</p></legend></li>
+</ul>
+<ul>
+    {% for choice in question.choice_set.all %}
+    <li>{{choice.choice_text }} -- {{choice.votes}} vote's</li>
+    {% endfor %}
+</ul>
+<legend><a class="btn btn-success" style= "text-decoration:none; color:black" href="{% url 'polls:detail' question.id %}">vote again?</a></legend>
+
+{% endblock %}

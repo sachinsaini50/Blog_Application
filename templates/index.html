@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+{% if latest_question_list %}
+       <h4 class="mb-3">Feedback</h4>
+   <ul>
+    {% for question in latest_question_list %}
+       <p><legend><a style="text-decoration: none; color:black" href="{% url 'polls:detail' question.id %}">{{question.question_text }}</a></legend></p>
+       </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p> No polls are available.</p>
+{% endif %}
+
+{% endblock %}
