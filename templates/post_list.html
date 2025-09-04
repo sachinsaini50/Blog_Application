@@ -99,7 +99,7 @@
                 {% if post.image %}
                     <img style="width: 361px; height: 400px;" src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
                 {% else %}
-                    <img style="width: 300px; height: 300px;" src="{% static 'default_post.jpg' %}" class="card-img-top" alt="Default Image">
+                    <img style="width: 300px; height: 300px;" src="{% static 'post_images/default_pic.png' %}" class="card-img-top" alt="Default Image">
                 {% endif %}</a>
                 <div class="card-body">
                     <h5 class="card-title fw-bold text-primary"><a style="color: black;" href="{% url 'blog:post_detail' pk=post.pk %}">{{ post.title }}</a></h5>

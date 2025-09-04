@@ -3,10 +3,14 @@
 {% load static %}
 
  <!-- <link rel="stylesheet" href="{% static 'polls/style.css' %}"> -->
- 
  <form action = "{% url 'polls:vote' question.id %}" method="post">
      {% csrf_token %}
+      <section id="about" class="py-5 bg-light">
+         <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-7"
      <fieldset>
+      <fieldset>
         <legend><p style="text-decoration: none;">{{question.question_text}}</p></legend>
         {% if error_message %}<p><strong>{{error_message}}</strong></p>{% endif %}
         {% for choice in question.choice_set.all %}
@@ -15,8 +19,12 @@
            <br>
         {% endfor %}
      </fieldset>
+     </fieldset>
      <br>
      <input class="btn btn-success" type="submit" value="vote">
+          </div>
+         </div>
+      </section>
     </form>
-  
+ 
    {% endblock %}

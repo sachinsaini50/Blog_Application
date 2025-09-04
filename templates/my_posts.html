@@ -6,12 +6,13 @@
 <ul>
     {% for post in posts %}
     <nav>
-        <h2><a href="{% url 'blog:post_detail' post.pk %}">{{ post.title}}</a><br></h2>
+        
         <a href="{% url 'blog:post_detail' post.pk %}">
         {% if post.image %}
         <img src="{{post.image.url}}"  style="width: 400px; height: 400px;">
-        {% endif %}</a>
-        <br> <br>
+        {% endif %}</a><br><br>
+        <h2><a style="color: black;" href="{% url 'blog:post_detail' post.pk %}">{{ post.title}}</a><br></h2>
+        
         <a style="text-decoration: none; color: black;" href="{% url 'blog:post_detail' post.pk %}">
         <p>{{ post.text|truncatewords:100 }}</p>
         </a>

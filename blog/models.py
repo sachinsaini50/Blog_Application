@@ -23,6 +23,7 @@ class Tag(models.Model):
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,related_name="posts")
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True, related_name="posts")
+    tags = TaggableManager(blank=True)
     title = models.CharField(max_length=200)
     text = models.TextField()
     image = models.ImageField(upload_to='post_images/',blank=True,null=True)
@@ -30,7 +31,6 @@ class Post(models.Model):
     published_date = models.DateTimeField(blank=True, null=True)
     featured_image = models.ImageField(upload_to='featured/', null=True, blank=True)
     thumbnail = models.ImageField(upload_to='thumbnails/',null=True,blank=True)
-    tags = TaggableManager()
     # tags = models.ManyToManyField("Tag", blank=True, related_name="posts")
 
     def publish(self):

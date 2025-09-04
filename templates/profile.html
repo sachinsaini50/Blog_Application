@@ -4,7 +4,7 @@
 
 
 
-<!-- <h2 style="color: #c25100; text-align:center">{{ user.username }}'s Profile</h2> -->
+<h2 style="color: #c25100; text-align:center">{{ user.username }}'s Profile</h2>
 
 
 <!-- <p>Profile-Picture:</p> -->
@@ -31,15 +31,15 @@
 
 
 
-<br><br>
-<ul class="list-group list-group-flush">
-<li>Username: {{ user_profile.username }}</li>
-<li>Email: {{ user_profile.email }}</li>
-<li>First Name: {{user_profile.first_name}}</li>
-<li>Last Name: {{user_profile.last_name}}</li>
-<li>Date-Of-Birth: {{user_profile.birth_date}}</li>
-<li>Location: {{user_profile.location}}</li>
-</ul>
+
+<div class="list-group list-group-flush"><br>
+<p>Username: {{ user_profile.username }}</p>
+<p>Email: {{ user_profile.email }}</p>
+<p>First Name: {{user_profile.first_name}}</p>
+<p>Last Name: {{user_profile.last_name}}</p>
+<p>Date-Of-Birth: {{user_profile.birth_date}}</p>
+<p>Location: {{user_profile.location}}</p>
+</div>
 <br>
 <div class="text-center mt-4">
 <a href="{%url 'api:profile_edit'%}" class="btn text-white" style="background-color:#C25100;">Edit Profile</a>
