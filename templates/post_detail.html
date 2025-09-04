@@ -16,6 +16,8 @@
         {% endif %} -->
         {% if post.image %}
         <img src="{{post.image.url}}" style="width: 400px; height: 400px;">
+        {% else %}
+                <img style="width: 400px; height: 400px;" src="{% static 'images/default_pic.png' %}" class="card-img-top" alt="Default Image">
         {% endif %}<br> <br>
         <h3>{{ post.title }}</h3>
         <p style="color: black;">{{ post.text|linebreaksbr }}</p>

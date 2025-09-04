@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
-<h2 style="color: #c25100; text-align:center;">{{ user.username }}'s Posts</h2><hr>
+<h2 style="color: #ffd700; text-align:center;">{{ user.username }}'s Posts</h2><hr>
 {% if posts %}
 <ul>
     {% for post in posts %}
@@ -10,6 +11,8 @@
         <a href="{% url 'blog:post_detail' post.pk %}">
         {% if post.image %}
         <img src="{{post.image.url}}"  style="width: 400px; height: 400px;">
+        {% else %}
+                <img style="width: 400px; height: 400px;" src="{% static 'images/default_pic.png' %}" class="card-img-top" alt="Default Image">
         {% endif %}</a><br><br>
         <h2><a style="color: black;" href="{% url 'blog:post_detail' post.pk %}">{{ post.title}}</a><br></h2>
         

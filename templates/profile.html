@@ -4,7 +4,7 @@
 
 
 
-<h2 style="color: #c25100; text-align:center">{{ user.username }}'s Profile</h2>
+<h2 style="color: #ffd700; text-align:center">{{ user.username }}'s Profile</h2>
 
 
 <!-- <p>Profile-Picture:</p> -->
@@ -16,7 +16,7 @@
 {% if user.profile_picture %}
    <img src="{{ user.profile_picture.url }}" alt="Profile_picture" id="profilePic"
     class= "rounded-circle shadow" style=" width:150px; height:150px;" >
-     <h4 class="mt-3" style="color:#C25100;">{{ user.username|title }}'s Profile</h4>
+     <h4 class="mt-3" style="color:#ffd700;">{{ user.username|title }}'s Profile</h4>
          </div>
    <div  id="imgModal" class="modal">
    <span class="close">&times;</span>
@@ -42,7 +42,7 @@
 </div>
 <br>
 <div class="text-center mt-4">
-<a href="{%url 'api:profile_edit'%}" class="btn text-white" style="background-color:#C25100;">Edit Profile</a>
+<a href="{%url 'api:profile_edit'%}" class="btn text-white" style="background-color:#ffd700;">Edit Profile</a>
 </div>
       </div></div></div></div>
 <style>

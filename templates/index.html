@@ -6,7 +6,7 @@
     <div class="row align-items-center">
        <div class="col-md-7">
 {% if latest_question_list %}
-       <h2 style="color: #c25100;" class="fw-bold mb-3">Feedback</h2>
+       <h2 style="color: #ffd700;" class="fw-bold mb-3">Feedback</h2>
    <ul>
     {% for question in latest_question_list %}
        <p><legend><a style="text-decoration: none; color:black" href="{% url 'polls:detail' question.id %}">{{question.question_text }}</a></legend></p>
