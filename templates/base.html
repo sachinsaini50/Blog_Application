@@ -17,7 +17,9 @@
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm py-3">
   
 <div class="container">
- <a class="navbar-brand fw-bold fs-3 text-warning" href="{% url 'blog:post_list' %}" style= "font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"> 📚 Study Blog</a>
+ <a class="navbar-brand fw-bold fs-3 text-warning" href="{% url 'blog:post_list' %}" style= "font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"> 
+   <img src="{% static 'images/logo3.png' %}" alt="Study Blog Logo" style="height:80px; width:80px; margin:10px;">
+ </a>
         <!-- <a style= "color: #c25100; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="navbar-brand fw-bold" href="{% url 'blog:post_list' %}">📚 Study Blog</a> -->
         <!-- Mobile Toggle -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -72,7 +74,9 @@
       <!-- About -->
       <div class="col-md-4 mb-3">
         <a style= "text-decoration:none;" href="{% url 'blog:post_list' %}">
-        <h5 style="color:#ffd700; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">📚Study Blog</h5></a>
+        <h5 style="color:#ffd700; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+          <img src="{% static 'images/logo3.png' %}" alt="Study Blog Logo" style="height:80px; width:80px; margin:10px;">
+        </h5></a>
         <p class="small">
           A platform to share coding tutorials, knowledge,<br>
           and experiences. Learn, build, and grow with us.
