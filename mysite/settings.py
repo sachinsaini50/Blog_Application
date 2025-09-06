@@ -27,10 +27,10 @@ SECRET_KEY = "django-insecure-9qz2#9o^*eoe@96nnn#ro&51@5-j6_r+ohadtuszd1ua22mzu+
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'study-blog-oqy2.onrender.com'
-    'sachinsaini4545.pythonanywhere.com',  
-    '127.0.0.1',
-    'localhost',
+    "sachinsaini4545.pythonanywhere.com",  # PythonAnywhere
+    "study-blog-oqy2.onrender.com",        # Render domain
+    "127.0.0.1",
+    "localhost",
 ]
 # Application definition
 
