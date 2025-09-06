@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-9qz2#9o^*eoe@96nnn#ro&51@5-j6_r+ohadtuszd1ua22mzu+
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "study-blog-zezn.onrender.com",  # your Render deployment
+    # "study-blog-zezn.onrender.com",  # your Render deployment
     "sachinsaini4545.pythonanywhere.com",  # your PythonAnywhere deployment
     "127.0.0.1",
     "localhost",
