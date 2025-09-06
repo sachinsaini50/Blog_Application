@@ -8,3 +8,6 @@ whitenoise
 psycopg2-binary
 dj-database-url
 django-taggit>=5.0
+django-cors-headers
+python-decouple
+Pillow
