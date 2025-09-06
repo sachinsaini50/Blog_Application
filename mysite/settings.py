@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
+from decouple import config, Csv
 from pathlib import Path
 import os
 
@@ -33,11 +33,11 @@ DEBUG = True
 #     "localhost",
 #     "127.0.0.1",
 # ]
-ALLOWED_HOSTS = [
-    "127.0.0.1",
-    "localhost",
-    "sachinsaini4545.pythonanywhere.com",
-]
+ALLOWED_HOSTS = config(
+   "ALLOWED_HOSTS",
+   default="127.0.0.1,localhost",
+   cast=Csv()
+)
 
 # Application definition
 
